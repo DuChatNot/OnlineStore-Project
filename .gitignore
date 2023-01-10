@@ -107,3 +107,4 @@ dist
 
 *.png
 *.svg
+.vscode
