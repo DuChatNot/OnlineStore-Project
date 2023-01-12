@@ -246,7 +246,8 @@
     padding-bottom: 24px;
     position: absolute;
     right: 0;
-    background-color: var(--white);
+    background-color: var(--text-input-field);
+    border-radius: 8px;
   }
   .product-detail-B-close {
     background: var(--white);
