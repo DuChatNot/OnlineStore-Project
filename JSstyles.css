@@ -91,7 +91,7 @@
     position: absolute; /*permite usar  top, right, bottom & left*/
     right: 60px;
     top: 60px;
-    background: var(--white);
+    background: var(--text-input-field);
     width: 100px;
     height: auto;
     border: 1px solid var(--very-light-pink);
@@ -163,7 +163,7 @@
 
   /*Aside (Shooping Cart)*/
   .product-detail {
-    background-color: var(--white);
+    background-color: var(--text-input-field);
     width: 360px;
     padding: 0 24px;
     box-sizing: border-box;

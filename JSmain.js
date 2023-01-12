@@ -91,10 +91,14 @@ const productDetail = document.querySelector('.product-detail-B');
 const productDetailOpen = productDetail.classList.contains('inactive');
 
 const close = document.querySelector('.product-detail-B-close');
-close.addEventListener('click',f)
+close.addEventListener('click',fb)
+
+function fb(){
+    productDetail.classList.add('inactive');
+}
 
 function f(){
-    productDetail.classList.toggle('inactive');
+    productDetail.classList.remove('inactive');
 
     if (mobMenuOpen){
         mobmenu.classList.add('inactive');
