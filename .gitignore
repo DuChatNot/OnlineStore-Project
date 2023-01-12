@@ -108,3 +108,4 @@ dist
 *.png
 *.svg
 .vscode
+.json

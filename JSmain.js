@@ -14,10 +14,15 @@ const mobMenuOpen = mobmenu.classList.contains('inactive');
 const menuOpen = menu.classList.contains('inactive');
 const cartOpen = cart.classList.contains('inactive');
 
+
 function toggleMenu() { /* Menu pequeño */
     menu.classList.toggle('inactive');
     if(cartOpen){
         cart.classList.add('inactive');
+    }
+
+    if(productDetailOpen){
+        productDetail.classList.add('inactive');
     }
 }
 function toggleMobMenu() { /*Menu largo*/ 
@@ -25,15 +30,21 @@ function toggleMobMenu() { /*Menu largo*/
     if(cartOpen){
         cart.classList.add('inactive');
     }
+
+    if(productDetailOpen){
+        productDetail.classList.add('inactive');
+    }
 }
 function shcrt(){ /*Menu lateral*/ 
     cart.classList.toggle('inactive');
     if (mobMenuOpen){
         mobmenu.classList.add('inactive');
     }
-
     if(menuOpen){
         menu.classList.add('inactive');
+    }
+    if(productDetailOpen){
+        productDetail.classList.add('inactive');
     }
 }
 
@@ -55,12 +66,32 @@ plist.push({
     image: 'https://images.pexels.com/photos/8744822/pexels-photo-8744822.jpeg?auto=compress&cs=tinysrgb&w=1600',
 });
 
+const productDetail = document.querySelector('.product-detail-B');
+const productDetailOpen = productDetail.classList.contains('inactive');
+
 /*Función creadora*/ function renderObjects(arr){
     for (product of arr){ //Para cada variable del arreglo:
 
         const productCard = document.createElement('div'); //Se crea sección Div
         productCard.classList.add('product-card'); //Clase de sección Div
-    
+        productCard.addEventListener('click',f);
+        function f(){
+            productDetail.classList.toggle('inactive');
+
+            if (mobMenuOpen){
+                mobmenu.classList.add('inactive');
+            } 
+            
+            if(cartOpen){ /*????*/ 
+                cart.classList.add('inactive');
+            }
+
+            if(menuOpen){
+                menu.classList.add('inactive');
+            }
+
+        }
+
         const img = document.createElement('img'); //Se crea imagen
         img.setAttribute('src', product.image); //Se obtiene y otorga la fuente de la imagen
     
@@ -112,6 +143,6 @@ plist.push({
         */
     }
 }
-
 renderObjects(plist);
+
 
